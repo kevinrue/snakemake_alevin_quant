@@ -2,3 +2,27 @@
 # In case of sample based data, it should be complemented by a samples.tsv file that contains
 # one row per sample. It can be parsed easily via pandas.
 samples: "config/samples.tsv"
+
+pattern:
+    # Pattern matching the filename of paired reads
+    read1: "_R1_001.fastq.gz"
+    read2: "_R2_001.fastq.gz"
+
+alevin:
+    # predefined transcript to gene map tsv file (--tgMap)
+    tgmap: "/ifs/mirror/alevin/txp2gene.tsv"
+    # predefined selective alignment index (-i)
+    index: "/ifs/mirror/alevin/salmon_partial_sa_index"
+    # starting index of the feature barcode on Read2 (--featureStart)
+    feature_start: 0
+    # length of the feature barcode (--featureLength)
+    feature_length: 15
+    # Cell-Barcodes end (5 or 3) location (--end)
+    end: 3
+    # umi length parameter for unknown protocol (--umiLength)
+    umi_length: 12
+    # barcode length parameter for unknown protocol(--barcodeLength)
+    barcode_length: 16
+    # resources
+    threads: 16
+    memory_per_cpu: 5

@@ -9,6 +9,45 @@ properties:
   samples:
     type: string
 
+  pattern:
+    type: object
+    properties:
+      read1:
+        type: string
+      read2:
+        type: string
+    required:
+      - read1
+      - read2
+
+  alevin:
+    type: object
+    properties:
+      feature_start:
+        type: integer
+      feature_length:
+        type: integer
+      end:
+        type: integer
+      umi_length:
+        type: integer
+      barcode_length:
+        type: integer
+      threads:
+        type: integer
+      memory_per_cpu:
+        type: integer
+    required:
+      - feature_start
+      - feature_length
+      - end
+      - umi_length
+      - barcode_length
+      - threads
+
+
 # entries that have to be in the config file for successful validation
 required:
   - samples
+  - pattern
+  - alevin

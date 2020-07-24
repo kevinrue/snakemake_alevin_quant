@@ -22,7 +22,7 @@ rule alevin:
         time='results/logs/time/alevin/{sample}'
     shell:
         """
-        {DATETIME} >> {log.time} &&
+        {DATETIME} > {log.time} &&
         rm -rf results/alevin/{wildcards.sample} &&
         salmon alevin -l ISR -i {input.index} \
         -1 {input.fastq1} -2 {input.fastq2} \

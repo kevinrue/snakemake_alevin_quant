@@ -1,3 +1,2 @@
-sample	condition
-A	untreated
-B	treated
+sample	expect_cells	force_cells	fastqs
+pbmc_1k_v3	1000	0	/ifs/mirror/10xgenomics/pbmc_1k_v3_fastqs
